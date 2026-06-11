@@ -5,7 +5,7 @@ Thanks for your interest! Engram is open-source and community-driven.
 ## Development Setup
 
 ```bash
-git clone https://github.com/holo-ai/engram.git
+git clone https://github.com/Wike-CHI/engram.git
 cd engram
 npm install
 npm test

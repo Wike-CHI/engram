@@ -5,7 +5,7 @@
 
 [![npm version](https://img.shields.io/npm/v/engram)](https://www.npmjs.com/package/engram)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Test Status](https://github.com/holo-ai/engram/actions/workflows/ci.yml/badge.svg)](https://github.com/holo-ai/engram/actions)
+[![Test Status](https://github.com/Wike-CHI/engram/actions/workflows/ci.yml/badge.svg)](https://github.com/Wike-CHI/engram/actions)
 
 ---
 

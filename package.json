@@ -32,11 +32,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/holo-ai/engram.git"
+    "url": "https://github.com/Wike-CHI/engram.git"
   },
-  "homepage": "https://github.com/holo-ai/engram",
+  "homepage": "https://github.com/Wike-CHI/engram",
   "bugs": {
-    "url": "https://github.com/holo-ai/engram/issues"
+    "url": "https://github.com/Wike-CHI/engram/issues"
   },
   "keywords": [
     "ai",
