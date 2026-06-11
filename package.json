@@ -1,0 +1,61 @@
+{
+  "name": "engram",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Engram — framework-agnostic active memory plugin for AI agents. Automatic memory extraction, semantic search, session bridging, and pluggable storage backends.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/holo-ai/engram.git"
+  },
+  "homepage": "https://github.com/holo-ai/engram",
+  "bugs": {
+    "url": "https://github.com/holo-ai/engram/issues"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "memory",
+    "active-memory",
+    "rag",
+    "agent-framework",
+    "llm",
+    "embeddings",
+    "plugin",
+    "fts5",
+    "sqlite"
+  ],
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "tsup": "^8.1.0",
+    "vitest": "^4.1.5",
+    "typescript": "^5.9.0"
+  }
+}
