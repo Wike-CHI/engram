@@ -23,9 +23,8 @@
     "typecheck": "tsc --noEmit",
     "build": "tsup",
     "dev": "tsup --watch",
-    "test": "vitest run",
+    "test": "vitest run --exclude '**/sqliteMemoryProvider.test.ts'",
     "test:sqlite": "vitest run src/providers/sqliteMemoryProvider.test.ts",
-    "test:all": "vitest run src/**/*.test.ts",
     "test:watch": "vitest"
   },
   "publishConfig": {
