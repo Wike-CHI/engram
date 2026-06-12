@@ -28,7 +28,7 @@ export interface ActiveMemoryPluginOptions {
   storageBasePath?: string;
 
   /** Optional embedding function for semantic search */
-  embeddingFn?: EmbeddingFn;
+  embeddingFn?: EmbeddingFn | null;
 
   /** Maximum memories to inject per before_step (default: 5) */
   activeMemoryLimit?: number;

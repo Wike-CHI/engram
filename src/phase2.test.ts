@@ -152,7 +152,7 @@ describe("ActiveMemoryPlugin", () => {
   let provider: JsonlMemoryProvider;
   let plugin: ActiveMemoryPlugin;
   let hooks: Record<string, Array<{ handler: Function; priority: number }>>;
-  let tools: Array<{ name: string }>;
+  let tools: Array<{ name: string; execute: Function }>;
   let registeredProvider: any;
 
   function createMockContext(): PluginContext {

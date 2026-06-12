@@ -118,5 +118,10 @@ export type { ActiveMemoryEngineOptions, BeforeStepResult, RunCompletion } from 
 // ═══════════════════════════════════════════
 
 export { GenericAdapter } from "./adapters/generic";
+export { OpenClawAdapter } from "./adapters/openclaw";
+export type { OpenClawHost } from "./adapters/openclaw";
 export { StandaloneServer } from "./adapters/standalone";
 export type { FrameworkAdapter, GenericAdapterConfig, StandaloneServerConfig } from "./adapters/types";
+
+export { LangChainMemoryAdapter } from "./adapters/langchain";
+export type { BaseMemory, MemoryVariables, LangChainMemoryAdapterConfig } from "./adapters/langchain";

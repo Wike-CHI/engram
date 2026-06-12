@@ -26,6 +26,8 @@ export interface ActiveMemoryEngineOptions {
   activeMemoryLimit?: number;
   /** LLM call function for background extraction */
   llmCall?: (prompt: string) => Promise<string>;
+  /** Enable daily snapshots (default: true) */
+  dailySnapshot?: boolean;
   /** Custom logger */
   logger?: EngramLogger;
 }
@@ -50,7 +52,7 @@ export interface RunCompletion {
   sessionKey?: string;
   steps: number;
   durationMs: number;
-  userMessages: Array<{ role: string; content: string }>;
+  userMessages?: Array<{ role: string; content: string }>;
 }
 
 /**
@@ -73,6 +75,7 @@ export class ActiveMemoryEngine {
       workspaceId: options.workspaceId ?? "default",
       activeMemoryLimit: options.activeMemoryLimit ?? 5,
       llmCall: options.llmCall ?? (async () => "NONE"),
+      dailySnapshot: options.dailySnapshot ?? true,
       logger: options.logger ?? {
         info: (msg) => console.log(`[engram:engine] ${msg}`),
         warn: (msg) => console.warn(`[engram:engine] ${msg}`),
@@ -96,7 +99,7 @@ export class ActiveMemoryEngine {
       llmCall: this.options.llmCall,
       autoExtract: true,
       sessionBridge: true,
-      dailySnapshot: true,
+      dailySnapshot: this.options.dailySnapshot,
       logger: this.options.logger,
     });
   }

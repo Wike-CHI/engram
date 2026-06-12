@@ -7,6 +7,7 @@ import { rm, mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { MemoryStore } from "./stores/memoryStore";
+import type { EmbeddingFn } from "./stores/memoryStore";
 import type { Memory, MemoryInput } from "./types/memory";
 
 // ── Helpers ──

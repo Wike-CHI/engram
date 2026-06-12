@@ -83,7 +83,11 @@ export class SqliteMemoryProvider implements MemoryProvider {
 
   async shutdown(): Promise<void> {
     if (this.initialized) {
-      this.db.close();
+      try {
+        this.db.close();
+      } catch {
+        // Database may already be closed
+      }
       this.initialized = false;
     }
   }
@@ -315,10 +319,17 @@ export class SqliteMemoryProvider implements MemoryProvider {
 
   /** Checkpoint and create a snapshot backup of the SQLite database */
   createSnapshot(snapshotPath: string): { path: string; count: number } {
-    this.db.pragma("wal_checkpoint(TRUNCATE)");
-    this.db.backup(snapshotPath);
-    const count = (this.db.prepare("SELECT COUNT(*) as c FROM memories WHERE archived = 0").get() as { c: number }).c;
-    return { path: snapshotPath, count };
+    if (!this.initialized) {
+      return { path: snapshotPath, count: 0 };
+    }
+    try {
+      this.db.pragma("wal_checkpoint(TRUNCATE)");
+      this.db.backup(snapshotPath);
+      const count = (this.db.prepare("SELECT COUNT(*) as c FROM memories WHERE archived = 0").get() as { c: number }).c;
+      return { path: snapshotPath, count };
+    } catch {
+      return { path: snapshotPath, count: 0 };
+    }
   }
 
   // ══════════════════════════════════════════════════════════════
