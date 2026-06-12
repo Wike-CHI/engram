@@ -22,6 +22,7 @@ jobs:
 
       - run: npm ci
       - run: npm test
+      - run: npm run test:sqlite
       - run: npx tsc --noEmit
 
   build:

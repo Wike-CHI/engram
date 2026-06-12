@@ -5,6 +5,7 @@ export default defineConfig({
     globals: true,
     environment: "node",
     include: ["src/**/*.test.ts"],
+    exclude: ["**/sqliteMemoryProvider.test.ts", "**/node_modules/**"],
     testTimeout: 15000,
   },
 });
